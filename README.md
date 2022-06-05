@@ -1,4 +1,4 @@
-   # DAN Old School
+# DAN Old School
 
 DAN Old School is a Minecraft modpack is available in curseforge.
 Modpack Page : https://www.curseforge.com/minecraft/modpacks/dan-old-school
