@@ -1,0 +1,116 @@
+type = menu
+
+customization-meta {
+  identifier = net.minecraft.client.gui.screens.TitleScreen
+  randomgroup = 1
+  renderorder = foreground
+  randommode = false
+  randomonlyfirsttime = false
+}
+
+customization {
+  path = logo.png
+  action = texturizebackground
+}
+
+customization {
+  keepaspectratio = false
+  action = backgroundoptions
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_multiplayer_button%
+  orientation = top-left
+  x = 227
+  action = movebutton
+  y = 275
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_multiplayer_button%
+  width = 100
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=button_compatibility_id:forge_titlescreen_mods_button%
+  orientation = top-left
+  x = 352
+  action = movebutton
+  y = 275
+}
+
+customization {
+  identifier = %id=button_compatibility_id:forge_titlescreen_mods_button%
+  width = 110
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_accessibility_button%
+  orientation = top-left
+  x = 404
+  action = movebutton
+  y = 312
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_singleplayer_button%
+  orientation = mid-left
+  x = 105
+  action = movebutton
+  y = 83
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_singleplayer_button%
+  width = 100
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_realms_button%
+  action = hidebutton
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_options_button%
+  orientation = mid-left
+  x = 481
+  action = movebutton
+  y = 83
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_options_button%
+  width = 100
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_quit_button%
+  orientation = top-left
+  x = 300
+  action = movebutton
+  y = 313
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_quit_button%
+  width = 100
+  action = resizebutton
+  height = 20
+}
+
+customization {
+  identifier = %id=button_compatibility_id:mc_titlescreen_language_button%
+  orientation = top-left
+  x = 272
+  action = movebutton
+  y = 313
+}
+

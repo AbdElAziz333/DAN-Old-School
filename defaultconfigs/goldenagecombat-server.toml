@@ -1,0 +1,136 @@
+
+#This section offers a selection of features related to Mojang's combat test snapshots which fit rather well alongside classic combat.
+[combat_tests]
+	#Add a delay of 4 ticks between throwing snowballs or eggs, just like with ender pearls.
+	throwables_delay = true
+	#Melee attacks that don't hit a target won't trigger the attack cooldown.
+	retain_energy_on_miss = true
+	#Arc of available protection depending on what angle the attack is coming from and where the player is looking (means the lower this angle the closer you need to be facing your attacker).
+	#Vanilla protection arc is 180 degrees, which has been reduced to around 100 in combat tests.
+	#This does not change the protection arc for projectiles which remains at 180 degress.
+	#Range: 0.0 ~ 360.0
+	shield_protection_arc = 100.0
+	#Attack cooldown is unaffected by switching hotbar items.
+	fast_switching = true
+	#Only damages axes by 1 durability instead of 2 when attacking so they properly be used as weapons.
+	no_axe_attack_penalty = true
+	#Holding down the attack button keeps attacking continuously. No more spam clicking required.
+	hold_attack_button = false
+	#Eating and drinking both are interrupted if the player is damaged.
+	eating_interruption = true
+	#Delay in ticks between attacks when holding the attack button is enabled.
+	#This basically also puts a cap on the max spam clicking speed.
+	#Range: > 0
+	hold_attack_button_delay = 5
+	#Disable attacking when attack cooldown is below a certain percentage.
+	#Setting this to 0.0 means attacking is possible with any strength as in vanilla.
+	#Range: 0.0 ~ 1.0
+	min_attack_strength = 0.0
+	#Increase snowball and egg stack size from 16 to 64, and potion stack size from 1 to 16 (only for potions of the same type of course).
+	increase_stack_size = true
+	#Attacking will no longer stop the player from sprinting. Very useful when swimming, so you can fight underwater without being stopped on every hit.
+	sprint_attacks = true
+	#It only takes 20 ticks to drink liquid foods (such as potions, milk, and bottled liquids) instead of 32 or 40.
+	fast_drinking = true
+	#Skip 5 tick warm-up delay when activating a shield, so they become effective instantly.
+	remove_shield_delay = true
+	#Hit mobs through blocks without a collision shape such as tall grass without having to break the block first.
+	swing_through_grass = true
+	#Disables damage immunity when hit by a projectile. Makes it possible for entities to be hit by multiple projectiles at once (useful for the multishot enchantment).
+	no_projectile_immunity = true
+	#Fix shields not knocking back attackers (see MC-147694).
+	shield_knockback_fix = true
+	#Force all entity hitboxes to have a cubic size of at least 0.9 blocks, making them easier to hit and shoot.
+	#This only affects targeting an entity, no collisions or whatsoever. Useful for hitting e.g. bats, rabbits, silverfish, fish, and most baby animals.
+	min_hitbox_size = true
+
+	[combat_tests.sweeping]
+		#Do not perform sweep attacks when sneaking.
+		no_sweeping_when_sneaking = false
+		#Only apply half the sweeping damage to indirectly hit mobs for better balancing of the sweeping feature.
+		half_sweeping_damage = true
+		#Is the sweeping edge enchantment required to perform a sweep attack.
+		require_sweeping_edge = true
+		#Allow sweep attacks to trigger without hitting a target even when attacking continuously by holding the attack button.
+		continuous_air_sweeping = true
+		#Allow sweep attack without hitting mobs, just by attacking air basically.
+		#This attack will not work when the attack button is held for continuous attacking.
+		air_sweep_attack = true
+
+#Classic combat is the focus of this mod, bringing back combat exactly as it used to be before the combat update. The option for removing the attack cooldown is probably the most important one here.
+[classic_combat]
+	#Allow using the "Attack" button while the "Use Item" button is held for mining blocks. Does not make a lot of sense, but it used to be a feature in old pvp.
+	interact_while_using = true
+	#Sprinting and attacking no longer interfere with each other, making critical hits possible at all times.
+	critical_hits_while_sprinting = true
+	#Boost sharpness enchantment to 1.25 damage points per level instead of just 0.5.
+	boost_sharpness = false
+	#Give Regeneration V and Absorption I instead of Regeneration II and Absorption IV after consuming a notch apple.
+	notch_apple_effects = false
+	#When slowing down movement or stopping completely momentum is lost much quicker.
+	quick_slowdown = false
+	#Completely remove the attack cooldown as if it never even existed in the first place.
+	remove_attack_cooldown = true
+	#Expand all entity hitboxes by 10%, making hitting a target possible from a slightly greater range and with much increased accuracy.
+	inflate_hitboxes = true
+	#The player's body turns sideways when walking backwards instead of remaining straight. Only a visual feature.
+	sideways_backwards_walking = true
+	#Choose the food mechanics to use:
+	#VANILLA will change nothing and use surplus saturation for very quick health regeneration.
+	#LEGACY_COMBAT will make health only regenerate every 4 seconds, while requiring 18 or more food points.
+	#CUSTOM will make health only regenerate every 3 seconds, which requires more than 6 food points.
+	#COMBAT_TEST will make health regenerate every 2 seconds, which requires more than 6 food points. Also food points will be directly consumed when healing.
+	#Allowed Values: VANILLA, COMBAT_UPDATE, LEGACY_COMBAT, CUSTOM
+	food_mechanics = "CUSTOM"
+	#Makes knockback stronger towards targets not on the ground (does not apply when in water).
+	upwards_knockback = true
+	#Player is knocked back by attacks which do not cause any damage, such as when hit by snowballs, eggs, and fishing rod hooks.
+	weak_attacks_knock_back_player = true
+
+	[classic_combat.fishing_rod]
+		#Hooking entities with a fishing rod causes only 3 damage points to the rod instead of 5.
+		slower_breaking = true
+		#Fishing rod deals knockback upon hitting an entity.
+		cause_knockback = true
+		#Entities reeled in using a fishing rod are slightly launched upwards.
+		launch_entities = true
+
+	#Some adjustments to modern combat features to make them fit in better with classic combat.
+	[classic_combat.adjustments]
+		#Disable rendering for certain particle types from modern combat, since they kinda clutter the screen since attacks can be dealt much quicker with classic combat options enabled.
+		#This option can be used to prevent basically any particle from showing.
+		#Format for every entry is "<namespace>:<path>". Path may use asterisk as wildcard parameter. Tags are not supported.
+		canceled_particles = ["minecraft:damage_indicator", "minecraft:sweep_attack"]
+		#Prevent various attack sounds added for the cooldown mechanic from playing.
+		#This option can be used to prevent basically any individual sound from playing.
+		#Format for every entry is "<namespace>:<path>". Path may use asterisk as wildcard parameter. Tags are not supported.
+		canceled_attack_sounds = ["minecraft:entity.player.attack.crit", "minecraft:entity.player.attack.knockback", "minecraft:entity.player.attack.nodamage", "minecraft:entity.player.attack.strong", "minecraft:entity.player.attack.weak", "minecraft:entity.player.attack.sweep"]
+
+[combat_attributes]
+	#Overrides for setting and balancing attack damage values of items.
+	#Takes precedence over any changes made by "legacy_attack_damage" option, but requires it to be enabled.
+	#As with all items, this value is added ON TOP of the default attack strength of the player (which is 1.0 by default).
+	#Format for every entry is "<namespace>:<path>,<amount>". Path may use asterisk as wildcard parameter. Tags are not supported.
+	attack_damage_overrides = []
+	#Revert weapon and tool attack damage to legacy values.
+	legacy_attack_damage = false
+	#Overrides for setting and balancing attack reach values of items.
+	#Takes precedence over any changes made by "attack_reach" option, but requires it to be enabled.
+	#As with all items, this value is added ON TOP of the default attack reach of the player (which is 3.0 by default, and has a hard cap at 6.0 in total).
+	#Format for every entry is "<namespace>:<path>,<amount>". Path may use asterisk as wildcard parameter. Tags are not supported.
+	attack_reach_overrides = []
+	#Makes it so that swords, hoes, and tridents have an increased reach when attacking.
+	attack_reach = false
+
+[sword_blocking]
+	#Arc of available protection depending on what angle the attack is coming from and where the player is looking (means the lower this angle the closer you need to be facing your attacker).
+	#Range: 0.0 ~ 360.0
+	protection_arc = 360.0
+	#Prioritize shield blocking over sword blocking in case both items are held at the same time.
+	prioritize_shield = true
+	#Allow blocking with swords, which will reduce most incoming attacks by 50% and render a parry animation.
+	allow_blocking = true
+	#Percentage to reduce knockback by while sword blocking.
+	#Range: 0.0 ~ 1.0
+	knockback_reduction = 0.2
+

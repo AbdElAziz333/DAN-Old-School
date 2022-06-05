@@ -1,0 +1,5 @@
+{
+  "protectPetsFromOwner": true,
+  "protectPetsFromPets": true,
+  "reflectDamage": false
+}
