@@ -7,7 +7,10 @@ Modpack Page : https://www.curseforge.com/minecraft/modpacks/dan-old-school
 2022/6/5
 Day and Night
 Presents
+
+
 ![logo](https://user-images.githubusercontent.com/89092953/172032106-fab7dfba-c56f-4faa-8131-b781a6dea6ff.png)
+
 
 DAN Old School modpack makes something for everyone!
 DAN Old School contains almost the old and favorite mods from 1.7 version into 1.18 with some incredible new modern classics!
