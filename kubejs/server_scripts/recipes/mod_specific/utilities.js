@@ -1,20 +1,12 @@
 onEvent('recipes', e => {
     // This file contains a recipe changes for small mods.
 
-    // (1) Backpacks and Luggage
+    // (1) Luggage
 
     e.remove({id: 'luggage:luggage'})
-    e.remove({id: 'simplybackpacks:epicbackpack'})
-    e.remove({id: 'simplybackpacks:ultimatebackpack'})
 
     e.shaped('luggage:luggage', ['SDS', 'SBS', 'SSS'],
-    {S: 'minecraft:stick', D: 'minecraft:diamond', B: 'simplybackpacks:commonbackpack'})
-    e.shaped('simplybackpacks:rarebackpack', ['D D', 'BUB', 'CMC'],
-    {D: 'minecraft:diamond', B: 'minecraft:blue_dye', U: 'luggage:luggage', C: '#forge:chests', M: 'minecraft:diamond_block'})
-    e.shaped('simplybackpacks:epicbackpack', ['SGS', 'MRM', 'CNC'],
-    {S: 'malum:soul_stained_steel_ingot', G: 'cyclic:gem_obsidian', M: 'minecraft:magenta_dye', R: 'simplybackpacks:rarebackpack', C: '#forge:chests', N: 'minecraft:nether_star'})
-    e.shaped('simplybackpacks:ultimatebackpack', ['IVI', 'NEN', 'CBC'],
-    {I: 'minecraft:netherite_ingot', V: 'stalwart_dungeons:void_crystal', N: 'minecraft:nether_star', E: 'simplybackpacks:epicbackpack', C: '#forge:chests', B: 'minecraft:netherite_block'})
+    {S: 'minecraft:stick', D: 'minecraft:diamond', B: 'bagofholding:iron_bag_of_holding'})
 
     // (2) Angel Ring
 
